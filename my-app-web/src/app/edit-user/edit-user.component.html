@@ -1,0 +1,22 @@
+<div class="container-modal" *ngIf="user">
+    <div class="panel panel-default">
+        <div class="panel-heading">Editing {{user.name}} detail</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" rows="5" aria-label="name" [(ngModel)]="user.name"/>
+              </div>
+              <div class="form-group">
+                <label for="name">Username:</label>
+                <input class="form-control" rows="5" aria-label="username" [(ngModel)]="user.username"/>
+              </div>
+              <div class="form-group">
+                <label for="name">Email:</label>
+                <input class="form-control" rows="5" aria-label="email" [(ngModel)]="user.email"/>
+              </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" (click)="save()" aria-label="btn-save">Save</button>
+        </div>
+    </div>
+</div>

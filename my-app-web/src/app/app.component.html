@@ -1,0 +1,25 @@
+<div class="container container-left" *ngIf="showUsers">
+  <h2>Users</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><a href="#" (click)="onSelect(user)">{{user.name}}</a></td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedUser" class="modal">
+  <div class="modal-content">
+    <app-edit-user [user]="selectedUser" (onSave)="save($event)"></app-edit-user>
+  </div>
+</div>
